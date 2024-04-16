@@ -17,7 +17,7 @@ logo="""
 def start():
     try:
         processNumber=int(subprocess.check_output('pgrep tor', shell=True).decode())
-        killProcess=subprocess.check_output(f'kill {processNumber}', shell=True).decode()
+        killProcess=subprocess.check_output(f'kill -9 {processNumber}', shell=True).decode()
     except:
         pass
     os.system("tor --HTTPTunnelPort 2006 > /dev/null 2>&1 &")
@@ -45,7 +45,7 @@ def reload():
         print(f" [ ! ]> {err} ")
     except KeyboardInterrupt:
         processNumber=int(subprocess.check_output('pgrep tor', shell=True).decode())
-        killProcess=subprocess.check_output(f'kill {processNumber}', shell=True).decode()
+        killProcess=subprocess.check_output(f'kill -9 {processNumber}', shell=True).decode()
         if "exiting cleanly" in killProcess:
             print("[ ! ]> Turn off ip chnager successfully ! ")
         else:
@@ -72,21 +72,21 @@ def main():
             print(logo)
             try:
                 processNumber=int(subprocess.check_output('pgrep tor', shell=True).decode())
-                killProcess=subprocess.check_output(f'kill {processNumber}', shell=True).decode()
+                killProcess=subprocess.check_output(f'kill -9 {processNumber}', shell=True).decode()
             except:
                 pass
             os.system("tor --HTTPTunnelPort 2006")
         elif menus.lower() == "d":
             try:
                 processNumber=int(subprocess.check_output('pgrep tor', shell=True).decode())
-                killProcess=subprocess.check_output(f'kill {processNumber}', shell=True).decode()
+                killProcess=subprocess.check_output(f'kill -9 {processNumber}', shell=True).decode()
             except:
                 pass
             os.system("xdg-open https://fb.com/m.e.h.2116")
         elif menus.lower() == "p":
             try:
                 processNumber=int(subprocess.check_output('pgrep tor', shell=True).decode())
-                killProcess=subprocess.check_output(f'kill {processNumber}', shell=True).decode()
+                killProcess=subprocess.check_output(f'kill -9 {processNumber}', shell=True).decode()
             except:
                 pass
             os.system("xdg-open https://www.facebook.com/Termux.Hacker.Bd.Official")
@@ -97,7 +97,7 @@ def main():
                     reload()
                 except KeyboardInterrupt:
                     processNumber=int(subprocess.check_output('pgrep tor', shell=True).decode())
-                    killProcess=subprocess.check_output(f'kill {processNumber}', shell=True).decode()
+                    killProcess=subprocess.check_output(f'kill -9 {processNumber}', shell=True).decode()
                     if "exiting cleanly" in killProcess:
                         print("[ ! ]> Turn off ip chnager successfully ! ")
                     else:
@@ -107,7 +107,7 @@ def main():
                     exit()
     except KeyboardInterrupt:
         processNumber=int(subprocess.check_output('pgrep tor', shell=True).decode())
-        killProcess=subprocess.check_output(f'kill {processNumber}', shell=True).decode()
+        killProcess=subprocess.check_output(f'kill -9 {processNumber}', shell=True).decode()
         if "exiting cleanly" in killProcess:
             print("[ ! ]> Turn off ip chnager successfully ! ")
         else:
