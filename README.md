@@ -31,7 +31,7 @@ git clone https://github.com/EH2116/ipc
 ### One Click Installation :
 
 ```
-apt update -y ; apt install python -y ; apt install git -y ; pip install requests ; git clone https://github.com/EH2116/ipc
+apt update -y ; apt install python tor -y ; apt install git -y ; pip install requests ; git clone https://github.com/EH2116/ipc
 
 ```
 
