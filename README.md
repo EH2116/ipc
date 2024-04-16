@@ -18,7 +18,7 @@
 ```
 apt update -y
 
-apt install python3 -y
+apt install python3 tor -y
 
 apt install git -y
 
