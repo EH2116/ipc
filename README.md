@@ -18,11 +18,9 @@
 ```
 apt update -y
 
-apt install python3 tor -y
+apt install python3 -y
 
 apt install git -y
-
-pip install requests
 
 git clone https://github.com/EH2116/ipc
 
@@ -31,7 +29,7 @@ git clone https://github.com/EH2116/ipc
 ### One Click Installation :
 
 ```
-apt update -y ; apt install python tor -y ; apt install git -y ; pip install requests ; git clone https://github.com/EH2116/ipc
+apt update -y ; apt install python -y ; apt install git -y ; git clone https://github.com/EH2116/ipc
 
 ```
 
