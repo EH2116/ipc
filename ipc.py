@@ -1,7 +1,15 @@
-import requests ,os,time,subprocess
-if "install ok installed" in subprocess.check_output('dpkg -s tor', shell=True).decode():
-    pass
-else:
+import os
+try:
+    import requests
+except:
+    os.system("pip install requests")
+import requests,time,subprocess
+try:
+    if "install ok installed" in subprocess.check_output('dpkg -s tor', shell=True).decode():
+        pass
+    else:
+        os.system("apt update ; apt install tor")
+except:
     os.system("apt update ; apt install tor")
 logo="""
      _____ ___     ____   ____ 
@@ -26,7 +34,7 @@ def start():
     print(f"[ ! ]> Ip adress is connecting ...")
     while True:
         try:
-            ip=requests.get("https://checkip.amazonaws.com/",proxies={"http":"http://127.0.0.1:2006","https":"http://127.0.0.1:2006"}).text
+            ip=requests.get("https://api.ipify.org/?format=text",proxies={"http":"http://127.0.0.1:2006","https":"http://127.0.0.1:2006"}).text
             break
         except:
             pass
@@ -39,7 +47,7 @@ def reload():
     try:
         os.system("kill -HUP $(pidof tor)")
         time.sleep(5)
-        ip=requests.get("https://checkip.amazonaws.com/",proxies={"http":"http://127.0.0.1:2006","https":"http://127.0.0.1:2006"}).text
+        ip=requests.get("https://api.ipify.org/?format=text",proxies={"http":"http://127.0.0.1:2006","https":"http://127.0.0.1:2006"}).text
         print(f" [ IP ] Your new ip address is : {ip}")
     except Exception as err:
         print(f" [ ! ]> {err} ")
