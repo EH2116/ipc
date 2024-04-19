@@ -1,3 +1,5 @@
+#bin/python3
+
 import os
 try:
     import requests
@@ -122,3 +124,5 @@ def main():
             print(killProcess)
 if __name__ == '__main__':
     main()
+
+#Dev: Ekramul Hassan
